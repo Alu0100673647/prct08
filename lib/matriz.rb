@@ -42,6 +42,7 @@ class Matriz
 	D << fd;
 
    end
+
   def to_s
   end
 
@@ -69,7 +70,4 @@ class Matriz
   def <=>
   end
   
-  
-  
-
 end
