@@ -3,29 +3,31 @@
 
 require 'matriz'
 
-describe "Matriz" do
-  before :each do
-    
-  end    
-    
- 
-    it "Se almacena correctamente la matriz 1" do
+describe "Metodos para la comprobación de la clase Matriz" do
+   before :each do
+      @matriz1 = matriz.new(2,3) 
+      @matriz2 = matriz.new(3,2)
+   end    
    
-    end
-    it "Se almacena correctamente la matriz 2" do
-        
-  end
-  
+   it "Se inicializa correctamente la matriz " do # Comprobamos que todas las casillas estan a cero cuando se crea el objeto
+	  while i < 2
+		 while j < 3
+			@matriz1[i][j].should == 0
+			j ++
+		 end
+		 i++
+      end
+   end
 
-   it "la matriz esta en formato to_s"do
-  end
+    it "la matriz esta en formato to_s"do
+   
+   end
    
    it "la matriz esta en formato to_i"do
   end
    
   end
   
- 
     it "Se multiplica un numero por todos los elementos de la matriz" do
       
     end

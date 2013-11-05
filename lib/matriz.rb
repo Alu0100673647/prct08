@@ -22,7 +22,7 @@ class Matriz
    @D = []
   end
 
-  def tam_matriz(n,m)
+  def initialize(n,m)
 	print ' introduzca las filas de las matrices: '
 	n = gets.chomp.to_i
 
