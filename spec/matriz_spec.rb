@@ -26,7 +26,6 @@ describe "Metodos para la comprobación de la clase Matriz" do
    it "la matriz esta en formato to_i"do
   end
    
-  end
   
     it "Se multiplica un numero por todos los elementos de la matriz" do
       
