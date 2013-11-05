@@ -32,7 +32,8 @@ class Matriz
    end
  
    def to_s
-	  s = "{"
+	  s = ""
+	  s += "{"
       for i in (0...@n)
          s += "{"
          for j in (0...@m)
@@ -49,9 +50,26 @@ class Matriz
       puts s
    end
   
+   def to_f
+      s = ""
+	  s = "{"
+      for i in (0...@n)
+         s += "{"
+         for j in (0...@m)
+            if j == 0
+               s += "#{@matrix[i][j].to_f}"
+            else
+               s += ","
+               s += "#{@matrix[i][j].to_f}"
+            end
+         end
+         s += "}"
+      end
+      s += "}"
+      puts s
+   end
+   
 end
 
-matriz1 = Matriz.new(2,3)
-matriz1.to_s
 
 

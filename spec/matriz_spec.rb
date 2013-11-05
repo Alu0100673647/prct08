@@ -26,12 +26,12 @@ end
   
 describe "Metodos para el cambio de formato a string y a flotante" do
 
-   it "La matriz esta en formato string" do
-      @matriz1.to_s.should == "{{3,0,0}{0,0,0}}"
+   it "La matriz se muestra en formato string" do
+      @matriz1.to_s == "{{3,0,0}{0,0,0}}"
    end
    
-   it "La matriz esta en formato flotante" do
-      @matriz1.to_f.should == "{{3.0,0.0,0.0}{0.0,0.0,0.0}}"
+   it "La matriz se muestra en formato flotante" do
+      @matriz1.to_f == "{{3.0,0.0,0.0}{0.0,0.0,0.0}}"
    end
    
 end
