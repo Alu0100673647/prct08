@@ -1,4 +1,5 @@
-# Practica 8 Lenguajes y Paradigmas de la programación usando #desarrollo dirigido por pruebas (Test Driven Development - TDD) con #la herramienta Rspec.
+# Practica 8 Lenguajes y Paradigmas de la programación usando #desarrollo dirigido por pruebas (Test Driven Development - TDD) con 
+# la herramienta Rspec.
 # Pedro Javier Núñez Rodríguez
 # Constanza Leon Baritussio
 # 
@@ -34,42 +35,86 @@ class Matriz
    def to_s
 	  s = ""
 	  s += "{"
-      for i in (0...@n)
+      for i in (0...n)
          s += "{"
-         for j in (0...@m)
+         for j in (0...m)
             if j == 0
-               s += "#{@matrix[i][j]}"
+               s += "#{matrix[i][j]}"
             else
                s += ","
-               s += "#{@matrix[i][j]}"
+               s += "#{matrix[i][j]}"
             end
          end
          s += "}"
       end
       s += "}"
-      puts s
+      s
    end
   
    def to_f
       s = ""
 	  s = "{"
-      for i in (0...@n)
+      for i in (0...n)
          s += "{"
-         for j in (0...@m)
+         for j in (0...m)
             if j == 0
-               s += "#{@matrix[i][j].to_f}"
+               s += "#{matrix[i][j].to_f}"
             else
                s += ","
-               s += "#{@matrix[i][j].to_f}"
+               s += "#{matrix[i][j].to_f}"
             end
          end
          s += "}"
       end
       s += "}"
-      puts s
+      s
+   end
+   
+   def -@
+	  mat = Matriz.new(n,m)
+      for i in (0...n) 
+         for j in (0...m)
+            if matrix[i][j] != 0
+               mat.matrix[i][j] = (matrix[i][j] * -1)
+            end
+         end
+      end
+      mat
+   end
+   
+   def * num
+      mat = Matriz.new(n,m)
+      for i in (0...n)
+         for j in (0...m)
+            mat.set(i,j,matrix[i][j] * num)
+         end
+      end
+      mat
+   end
+   
+   def + matAux
+      mat = Matriz.new(n,m)
+      for i in (0...n)
+         for j in (0...m)
+            mat.set(i,j,matrix[i][j] + matAux.matrix[i][j])
+         end
+      end
+      mat
+   end
+   
+   def - matAux
+      mat = Matriz.new(n,m)
+      for i in (0...n)
+         for j in (0...m)
+            mat.set(i,j,matrix[i][j] *- matAux.matrix[i][j])
+         end
+      end
+      mat
    end
    
 end
+
+
 
 
 
