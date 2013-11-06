@@ -74,6 +74,7 @@ describe "Matriz" do
          @matriz1.set(0,0,3)
          @matriz1.set(0,1,4)
          @matriz2.set(0,0,2)
+         @matriz2.set(0,1,1)
       end 
       
       it "Se multiplica un numero por todos los elementos de la matriz" do
@@ -89,6 +90,11 @@ describe "Matriz" do
       it "Se restan las matrices" do
          @matriz3 = (@matriz1 - @matriz2)
          @matriz3.to_s.should == "{{1,4}{0,0}}"
+      end
+      
+      it "Se multiplican las mastrices" do
+         @matriz3 = (@matriz1 * @matriz2)
+         @matriz3.to_s.should == "{{5,4}{0,0}}"
       end
    end
 end
