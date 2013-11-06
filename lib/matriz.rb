@@ -6,13 +6,13 @@
 
 class Matriz
   
-   include Comparable
+   include Comparable 		#Método comparable
    attr_accessor :matrix, :n, :m
    @matrix
    @n   # filas
    @m   # columnas
 	
-   def initialize(n,m)
+   def initialize(n,m) 		#Constructor de la clase que inicializa la matriz con los valores que se le pasan por parametros
       raise ArgumentError, 'Tamaño de matriz no valido' unless n.is_a? Integer and m.is_a? Integer and n > 0 and m > 0
 	  @n = n 
 	  @m = m
@@ -25,14 +25,14 @@ class Matriz
       end
    end
  
-   def set(i, j, valor)
+   def set(i, j, valor)		#Método para aaceder a los valores i , j y valor de la matriz
       raise ArgumentError, 'Indice no valido' unless i.is_a? Integer and i >= 0 and i < @n
       raise ArgumentError, 'Indice no valido' unless j.is_a? Integer and j >= 0 and j < @m
       raise ArgumentError, 'Valor no numerico' unless valor.is_a? Integer 
       @matrix[i][j] = valor
    end
  
-   def to_s
+   def to_s			#Método encargado de mostrar por consola la matriz de forma matriz[i][j]		
 	  s = ""
 	  s += "{"
       for i in (0...n)
@@ -51,7 +51,7 @@ class Matriz
       s
    end
   
-   def to_f
+   def to_f			# Método encargado de mostrar por  la consola la matriz en formato flotante
       s = ""
 	  s = "{"
       for i in (0...n)
@@ -70,7 +70,7 @@ class Matriz
       s
    end
    
-   def -@
+   def -@			# Sobrecarga del operador - para calcular el opuesto de una matriz
 	  mat = Matriz.new(n,m)
       for i in (0...n) 
          for j in (0...m)
@@ -82,7 +82,7 @@ class Matriz
       mat
    end
    
-   def * num
+   def * num			#Método que multiplica un número por una matriz
       mat = Matriz.new(n,m)
       for i in (0...n)
          for j in (0...m)
@@ -92,7 +92,7 @@ class Matriz
       mat
    end
    
-   def + matAux
+   def + matAux			#Método para hacer la suma de de matrices
       mat = Matriz.new(n,m)
       for i in (0...n)
          for j in (0...m)
@@ -102,7 +102,7 @@ class Matriz
       mat
    end
    
-   def - matAux
+   def - matAux			#Método para hacer la resta de  matrices
       mat = Matriz.new(n,m)
       for i in (0...n)
          for j in (0...m)
@@ -112,7 +112,18 @@ class Matriz
       mat
    end
    
+   def * matAux			#Método para hacer la multiplicacion de matrices
+      mat = Matriz.new(n,m)	
+      for i in (0...n)
+        for j in (0...m)
+	    mat.set(i,j,matrix[i][j] * matAux.matrix[i][j])
+	end
+      end
+      mat
+   end
 end
+
+
 
 
 
