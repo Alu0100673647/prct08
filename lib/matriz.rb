@@ -106,7 +106,7 @@ class Matriz
       mat = Matriz.new(n,m)
       for i in (0...n)
          for j in (0...m)
-            mat.set(i,j,matrix[i][j] *- matAux.matrix[i][j])
+            mat.set(i,j,matrix[i][j] - matAux.matrix[i][j])
          end
       end
       mat

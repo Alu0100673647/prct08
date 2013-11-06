@@ -83,13 +83,12 @@ describe "Matriz" do
   
       it "Se suman las matrices" do
          @matriz3 = (@matriz1 + @matriz2)
-         @matriz3.to_s.should == "{{6,8,0}{0,0,0}}"
-      end
-    
+         @matriz3.to_s.should == "{{5,4}{0,0}}"
       end
  
       it "Se restan las matrices" do
-      
+         @matriz3 = (@matriz1 - @matriz2)
+         @matriz3.to_s.should == "{{1,4}{0,0}}"
       end
    end
 end
