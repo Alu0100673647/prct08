@@ -6,7 +6,7 @@
 
 class Matriz
   
-   include Comparable 		#Método comparable
+   include Comparable 		#Modulo comparable
    attr_accessor :matrix, :n, :m
    @matrix
    @n   # filas
@@ -112,17 +112,20 @@ class Matriz
       mat
    end
    
-   def * matAux			#Método para hacer la multiplicacion de matrices
+=begin  def * matAux			#Método para hacer la multiplicacion de matrices
       mat = Matriz.new(n,m)	
-      for i in (0...n)
-        for j in (0...m)
-	    mat.set(i,j,matrix[i][j] * matAux.matrix[i][j])
-	end
+      for k in 0...n
+	    for i in (0...n)
+		         contador = 0
+                 for j in (0...m)
+		                contador = mat.set(contador +(matrix[i][j] * matAux.matrix[j][i]))
+				end
       end
-      mat
-   end
-end
+      mat[k][i] = contador
 
+   end
+=end
+end
 
 
 
