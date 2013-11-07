@@ -32,6 +32,10 @@ class Matriz
       @matrix[i][j] = valor
    end
  
+   def get(i, j)
+      return @matrix[i][j]
+   end
+     
    def to_s			#Método encargado de mostrar por consola la matriz de forma matriz[i][j]		
 	  s = ""
 	  s += "{"
@@ -116,13 +120,14 @@ class Matriz
       mat = Matriz.new(n,m)	
       for k in 0...n
 	    for i in (0...n)
-		         contador = 0
-                 for j in (0...m)
-		      contador = mat.set(contador +(matrix[i][j] * matAux.matrix[j][i]))
+	       contador = 0
+               for j in (0...m)
+		  contador = contador +(self.get(i,j) * matAux.get(i,j))
 		end
             end
-         mat[k][i] = contador
+         mat.set(i,j, contador)
      end
+     mat
  end
 
 end

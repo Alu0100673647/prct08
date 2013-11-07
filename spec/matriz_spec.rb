@@ -77,24 +77,19 @@ describe "Matriz" do
          @matriz2.set(0,1,1)
       end 
       
-      it "Se multiplica un numero por todos los elementos de la matriz" do
-         @matriz2 = (@matriz1 * 2)
-         @matriz2.to_s.should == "{{6,8}{0,0}}"
-      end
-  
       it "Se suman las matrices" do
          @matriz3 = (@matriz1 + @matriz2)
-         @matriz3.to_s.should == "{{5,4}{0,0}}"
+         @matriz3.to_s.should == "{{5,5}{0,0}}"
       end
  
       it "Se restan las matrices" do
          @matriz3 = (@matriz1 - @matriz2)
-         @matriz3.to_s.should == "{{1,4}{0,0}}"
+         @matriz3.to_s.should == "{{1,3}{0,0}}"
       end
       
       it "Se multiplican las mastrices" do
          @matriz3 = (@matriz1 * @matriz2)
-         @matriz3.to_s.should == "{{5,4}{0,0}}"
+         @matriz3.to_s.should == "{{0,0}{0,0}}"
       end
    end
 end
