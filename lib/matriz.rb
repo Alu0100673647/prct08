@@ -118,26 +118,13 @@ class Matriz
 	    for i in (0...n)
 		         contador = 0
                  for j in (0...m)
-		                contador = mat.set(contador +(matrix[i][j] * matAux.matrix[j][i]))
-				end
-      end
-      mat[k][i] = contador
+		      contador = mat.set(contador +(matrix[i][j] * matAux.matrix[j][i]))
+		end
+            end
+         mat[k][i] = contador
+     end
+ end
 
-   end
 end
-
-end
-
-mimatriz = Matriz.new(2,3)
-otramatriz = Matriz.new(3,2)
-resultad = Matriz.new(3,3)
-resultado = mimatriz * otramatriz
-
-puts mimatriz
-puts otramatriz
-puts resultado
-
-
-
 
 
