@@ -112,7 +112,7 @@ class Matriz
       mat
    end
    
-=begin  def * matAux			#Método para hacer la multiplicacion de matrices
+  def * matAux			#Método para hacer la multiplicacion de matrices
       mat = Matriz.new(n,m)	
       for k in 0...n
 	    for i in (0...n)
@@ -124,9 +124,18 @@ class Matriz
       mat[k][i] = contador
 
    end
-=end
 end
 
+end
+
+mimatriz = Matriz.new(2,3)
+otramatriz = Matriz.new(3,2)
+resultad = Matriz.new(3,3)
+resultado = mimatriz * otramatriz
+
+puts mimatriz
+puts otramatriz
+puts resultado
 
 
 

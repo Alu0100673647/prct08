@@ -125,8 +125,17 @@ class Matriz
 
    end
 end
+
 end
 
+mimatriz = Matriz.new(2,3)
+otramatriz = Matriz.new(3,2)
+resultad = Matriz.new(3,3)
+resultado = mimatriz * otramatriz
+
+puts mimatriz
+puts otramatriz
+puts resultado
 
 
 
